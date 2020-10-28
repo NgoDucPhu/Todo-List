@@ -1,0 +1,220 @@
+/* common style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: "Lato", sans-serif;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  /* Container */
+  .todo-container {
+    max-width: 70rem;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .todo__title {
+    font-size: 5rem;
+    color: #44bd32;
+  }
+  
+  /* todo-form */
+  .todo__form {
+    margin: 3rem 0;
+  }
+  
+  .todo__form-input {
+    width: 35rem;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-right: 1rem;
+    font-size: 1.8rem;
+    border-bottom: 1px solid #44bd32;
+  }
+  
+  
+  .add-btn {
+    background: #0000ff;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 0.7rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .add-btn:hover {
+    background: #2196f3;
+  }
+  
+  /* todo-items */
+  .todo__list {
+    max-width: 60rem;
+    width: 100%;
+  }
+  
+  /* each li  */
+  .todo__list-item {
+    background: #fff;
+    padding: 1rem;
+    font-size: 1.8rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  
+  .todo__list-item:first-child {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+  }
+  
+  .todo__list-item:last-child {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+  
+  .delete-btn {
+    background: #dc143c;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+  }
+  
+  .delete-btn:hover {
+    color: #fff;
+  }
+  
+  .checkbox {
+    display: inline-block;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: 10px;
+  }
+  
+  
+  
+  /* label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
+  } */
+  
+  /* Hide the brower's default checkbox */
+  /* .checkbox {
+    display: none;
+  } */
+  
+  /* Create a custom checkbox */
+  /* .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #eee;
+    height: 20px;
+    width: 20px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  /* label:hover input ~ .checkmark {
+    background: #ccc;
+  } */
+  
+  /* when the checkbox is checked, add a blue background */
+  /* label input:checked ~ .checkmark {
+    background: #2196f3;
+  }
+  
+  .checkmark::after {
+    position: absolute;
+    content: "";
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    display: none;
+  }
+  
+  label input:checked ~ .checkmark::after {
+    display: block;
+  } */
+  
+  .checked {
+    text-decoration: line-through;
+    color: #ccc;
+  } 
+  
+  /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+  
+  @media only screen 
+    and (max-width: 667px) { 
+      html {
+        font-size: 70%;
+      }
+      .todo-container {
+        width: 100%;
+       
+      }
+      .add-btn {
+        display: block;
+        width: 100%;
+      }
+      .todo__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+      .todo__title {
+        font-size: 4rem;
+      }
+      .todo__form-input {
+        width: 100%;
+        margin: 10px 0;
+        border-bottom: 2px solid #44bd32;
+      }
+      .todo__list {
+        width: 100%;
+      }
+      .todo__list-item {
+        border-bottom: 1px solid black;
+      }
+      .todo__list-item:last-child {
+        border: none;
+      }
+  
+  }
+  /* -----------------IPad--------------- */
+  
+  
+  
