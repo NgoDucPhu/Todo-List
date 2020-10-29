@@ -1,4 +1,3 @@
-
 /** 
  * - Add a new todo item 
  * - Toggle the todo item if it is completed or not
@@ -7,7 +6,7 @@
  */
 
 
- 
+
 // select everthing
 const addBtn = document.querySelector(".add-btn");
 const todoInput = document.querySelector(".todo__form-input");
@@ -21,8 +20,11 @@ addBtn.addEventListener("click", function (e) {
 });
 
 todoList.addEventListener('click', (e) => {
-  if(e.target.type == 'checkbox') {
+  if (e.target.type == 'checkbox') {
     toggleState(e.target.parentElement.getAttribute('data-key'));
+  }
+  if (e.target.classList.contains('delete-btn')) {
+    deleteTodo(e.target.parentElement.getAttribute('data-key'))
   }
 })
 
@@ -34,6 +36,7 @@ if (todos === null) {
   todos = JSON.parse(todos);
   renderTodos(todos);
 }
+
 function addTodo(item) {
 
   if (item !== "") {
@@ -45,8 +48,7 @@ function addTodo(item) {
     };
 
     todos.push(todo);
-    localStorage.setItem('todos', JSON.stringify(todos));
-    renderTodos(todos);
+    saveLocalStorage(todos);
 
     todoInput.value = "";
   }
@@ -54,7 +56,7 @@ function addTodo(item) {
 
 function renderTodos(items) {
   //  Clear screen
-  todoList.innerHTML = ""; 
+  todoList.innerHTML = "";
 
   items.forEach((item) => {
     const li = document.createElement("li");
@@ -68,10 +70,9 @@ function renderTodos(items) {
     // check if the todo is completed
     const checked = item.completed ? "checked" : null;
 
-    li.innerHTML = `
-        <input id='checkbox' type="checkbox" class="checkbox" ${checked}>
-        <p class="text">${item.name}</p> 
-        <button class="btn delete-btn ">x</button>`;
+    li.innerHTML = `<input id='checkbox' type="checkbox" class="checkbox" ${checked}>
+                    <p class="text">${item.name}</p> 
+                    <button class="btn delete-btn ">x</button>`;
 
     todoList.append(li);
   });
@@ -83,9 +84,15 @@ function toggleState(id) {
       todo.completed = !todo.completed;
     }
   })
-  localStorage.setItem('todos', JSON.stringify(todos));
-  renderTodos(todos);
+  saveLocalStorage(todos)
 }
 
+function deleteTodo(id) {
+  todos = todos.filter(todo => todo.id != id);
+  saveLocalStorage(todos);
+}
 
-
+function saveLocalStorage(items) {
+  localStorage.setItem('todos', JSON.stringify(items));
+  renderTodos(items);
+}
