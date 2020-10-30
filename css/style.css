@@ -15,6 +15,8 @@
     display: flex;
     justify-content: center;
     font-family: "Lato", sans-serif;
+    background-color: #6a93cb;
+    background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);
   }
   
   ul {
@@ -30,7 +32,7 @@
   
   .todo__title {
     font-size: 5rem;
-    color: #44bd32;
+    color: #0000ff;
   }
   
   /* todo-form */
@@ -56,7 +58,7 @@
     border: none;
     outline: none;
     border-radius: 5px;
-    padding: 0.7rem;
+    padding: 1rem;
     font-size: 1.8rem;
     cursor: pointer;
     margin-top: 1rem;
@@ -83,7 +85,12 @@
     overflow: hidden;
   }
   
-  
+  .todo__list-item {
+    border-bottom: 1px solid black;
+  }
+  .todo__list-item:last-child {
+    border: none;
+  }
   .todo__list-item:first-child {
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
@@ -116,58 +123,7 @@
     height: 1.8rem;
     margin-right: 10px;
   }
-  
-  
-  
-  /* label {
-    position: relative;
-    padding-left: 30px;
-    cursor: pointer;
-    user-select: none;
-  } */
-  
-  /* Hide the brower's default checkbox */
-  /* .checkbox {
-    display: none;
-  } */
-  
-  /* Create a custom checkbox */
-  /* .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #eee;
-    height: 20px;
-    width: 20px;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  /* label:hover input ~ .checkmark {
-    background: #ccc;
-  } */
-  
-  /* when the checkbox is checked, add a blue background */
-  /* label input:checked ~ .checkmark {
-    background: #2196f3;
-  }
-  
-  .checkmark::after {
-    position: absolute;
-    content: "";
-    left: 6px;
-    top: 3px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-    display: none;
-  }
-  
-  label input:checked ~ .checkmark::after {
-    display: block;
-  } */
-  
+
   .checked {
     text-decoration: line-through;
     color: #ccc;
@@ -206,12 +162,7 @@
       .todo__list {
         width: 100%;
       }
-      .todo__list-item {
-        border-bottom: 1px solid black;
-      }
-      .todo__list-item:last-child {
-        border: none;
-      }
+      
   
   }
   /* -----------------IPad--------------- */
